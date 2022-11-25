@@ -1,3 +1,5 @@
+import 'package:dataramen/view/dashboard.dart';
+import 'package:dataramen/view/login.dart';
 import 'package:dataramen/view/register.dart';
 import 'package:dataramen/view/menu.dart';
 import 'package:dio/dio.dart';
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily : 'Poppins'
       ),
-      home: Register(),
+      home: Login(),
     );
   }
 }

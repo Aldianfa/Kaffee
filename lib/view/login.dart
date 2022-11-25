@@ -81,14 +81,14 @@ class _LoginState extends State<Login> {
         padding: EdgeInsets.symmetric(horizontal: 25, vertical: 23),
         child: Column(
           children: <Widget>[
-            Image.asset('../assets/logo.png',height: 50,),
+            Image.asset('../assets/logo.png',height: 90,),
             SizedBox(height: 16,),
             Align(
               alignment: Alignment.topCenter,
               child: Column(
                 children: <Widget>[
                   Text(
-                    "Hello Ramen Lovers",
+                    "Hello Coffee Lovers",
                     style: TextStyle(
                       color: Colors.black,
                       
@@ -155,7 +155,7 @@ class _LoginState extends State<Login> {
               child: Text(
                 "Forgot password?",
                 style: TextStyle(
-                  color: Colors.amberAccent,
+                  color: Colors.green,
                   fontSize: 16,
                   
                 ),
@@ -172,7 +172,7 @@ class _LoginState extends State<Login> {
                     fontSize: 18,
                   )),
               style: ElevatedButton.styleFrom(
-                  primary: Colors.orangeAccent,
+                  primary: Colors.green,
                   minimumSize: const Size.fromHeight(55),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
@@ -199,7 +199,7 @@ class _LoginState extends State<Login> {
                       style: TextStyle(
                         fontFamily: 'Poppins Light',
                         fontSize: 16,
-                        color: Colors.orangeAccent,
+                        color: Colors.green,
                       )),
                 ),
               ],
