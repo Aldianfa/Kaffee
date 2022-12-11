@@ -182,7 +182,7 @@ class _AddKopiState extends State<AddKopi> {
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.grey.shade200, width: 3)),
-                  hintText: 'Coffe Based or non Coffee Based',
+                  hintText: 'Coffe Based or Non Coffee Based',
                   hintStyle: TextStyle(
                       color: Colors.grey,
                       fontSize: 16),
