@@ -1,4 +1,5 @@
-import 'package:dataramen/view/login.dart';
+
+import 'package:dataramen/view/loginn.dart';
 import 'package:flutter/material.dart';
 
 import '../models/Ramene.dart';
@@ -27,7 +28,7 @@ class _TeksState extends State<Teks> {
             onPressed: () {
               print('Sudah Logout');
               Navigator.pushReplacement(context, 
-                      MaterialPageRoute(builder: (context) => Login()));
+                      MaterialPageRoute(builder: (context) => loginn()));
             }
           )
         ],

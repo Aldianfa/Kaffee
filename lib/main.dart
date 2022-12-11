@@ -1,7 +1,12 @@
-import 'package:dataramen/view/dashboard.dart';
-import 'package:dataramen/view/login.dart';
-import 'package:dataramen/view/register.dart';
+
+import 'package:dataramen/view/add_kopi.dart';
+import 'package:dataramen/view/dashboardd.dart';
+import 'package:dataramen/view/home.dart';
+
 import 'package:dataramen/view/menu.dart';
+import 'package:dataramen/view/news_kopi.dart';
+import 'package:dataramen/view/registerr.dart';
+import 'package:dataramen/view/splashscreen.dart';
 import 'package:dio/dio.dart';
 import'package:flutter/material.dart';
 
@@ -20,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily : 'Poppins'
       ),
-      home: Login(),
+      home: AddKopi(),
     );
   }
 }
