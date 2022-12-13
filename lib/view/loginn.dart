@@ -19,7 +19,7 @@ class _loginnState extends State<loginn> {
   void login(String email, password) async {
     try {
       // ME-GET atau Mengambil data json dari link
-      var response = await Dio().get('http://192.168.100.57:3000/user');
+      var response = await Dio().get('http://192.168.18.69:3000/user');
       // inisialisasi panjang data
       var panjang_data = response.data.length;
       if (response.statusCode == 200) {
