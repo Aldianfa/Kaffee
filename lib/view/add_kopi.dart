@@ -30,7 +30,7 @@ class _AddKopiState extends State<AddKopi> {
   void add(String name, price, description, image, des, int rate) async {
     try {
       // ME-POST atau MENAMBAH data json dari link 
-      var response = await Dio().post('http://192.168.18.69:3000/kopi',
+      var response = await Dio().post('http://192.168.98.91:3000/kopi',
           data: {
             "name": name,
             "price": price,

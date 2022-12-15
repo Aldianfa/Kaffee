@@ -1,9 +1,10 @@
 
 import 'package:dataramen/view/add_kopi.dart';
+import 'package:dataramen/view2/candra.dart';
 import 'package:dataramen/view/dashboardd.dart';
 import 'package:dataramen/view/home.dart';
 
-import 'package:dataramen/view/menu.dart';
+import 'package:dataramen/view2/menu_ramen.dart';
 import 'package:dataramen/view/news_kopi.dart';
 import 'package:dataramen/view/registerr.dart';
 import 'package:dataramen/view/splashscreen.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily : 'Poppins'
       ),
-      home: Splashscreen(),
+      home: Home_page(),
     );
   }
 }

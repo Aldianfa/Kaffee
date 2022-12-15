@@ -120,6 +120,17 @@ class _Home_pageState extends State<Home_page> {
               //   style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 13, 155, 0)),
               // ),
               SizedBox(height: 10,),
+
+              Card(
+              semanticContainer: true,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Image.asset('assets/img/Layer.png',fit:BoxFit.fill,),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          elevation: 5,
+          margin: EdgeInsets.all(10),
+            ),
       
               // GridView.builder(
                 

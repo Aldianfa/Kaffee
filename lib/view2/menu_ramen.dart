@@ -45,7 +45,7 @@ class _TeksState extends State<Teks> {
           SizedBox(
             height: 10,
           ),
-          FutureBuilder<List<Ramene>>(
+            FutureBuilder<List<Ramene>>(
               future: RameneService.getDataRamen(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -54,42 +54,6 @@ class _TeksState extends State<Teks> {
                   if (snapshot.hasError) {
                     return Center(child: Text('Error: ${snapshot.error}'));
                   } else {
-                    // return Expanded(
-                    //   child: GridView.builder(
-                    //     itemCount: snapshot.data!.length,
-                    //     gridDelegate:
-                    //         const SliverGridDelegateWithFixedCrossAxisCount(
-                    //             crossAxisCount: 2,
-                    //             childAspectRatio: 1,
-                    //             mainAxisSpacing: 15,
-                    //             crossAxisSpacing: 15),
-                    //     itemBuilder: (context, i) {
-                    //       return Column(
-                    //         children: [
-                    //           Expanded(
-                    //             child: Container(
-                    //               decoration: BoxDecoration(
-                    //                   color: Colors.white,
-                    //                   borderRadius: BorderRadius.circular(20),
-                    //                   boxShadow: [
-                    //                     BoxShadow(
-                    //                         color:
-                    //                             Colors.grey.withOpacity(0.5),
-                    //                         spreadRadius: 0.5,
-                    //                         blurRadius: 3,
-                    //                         offset: Offset(4, 3))
-                    //                   ],
-                    //                   image: DecorationImage(
-                    //                       image: NetworkImage(
-                    //                           '${snapshot.data?[i].img_url}'),
-                    //                       fit: BoxFit.fill)),
-                    //             ),
-                    //           )
-                    //         ],
-                    //       );
-                    //     },
-                    //   ),
-                    // );
                     return Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: GridView.builder(
@@ -148,7 +112,8 @@ class _TeksState extends State<Teks> {
                     );
                   }
                 }
-              })
+              }
+              )
         ]),
       ),
     );

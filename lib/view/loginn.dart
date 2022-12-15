@@ -2,7 +2,7 @@ import 'package:dataramen/view/home.dart';
 import 'package:dataramen/view/registerr.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'menu.dart';
+import '../view2/menu_ramen.dart';
 
 class loginn extends StatefulWidget {
   const loginn({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _loginnState extends State<loginn> {
   void login(String email, password) async {
     try {
       // ME-GET atau Mengambil data json dari link
-      var response = await Dio().get('http://192.168.18.69:3000/user');
+      var response = await Dio().get('http://192.168.98.91:3000/user');
       // inisialisasi panjang data
       var panjang_data = response.data.length;
       if (response.statusCode == 200) {
