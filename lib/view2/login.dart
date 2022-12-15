@@ -1,5 +1,5 @@
 
-import 'package:dataramen/view/menu.dart';
+import 'package:dataramen/view2/menu_ramen.dart';
 import 'package:dataramen/view/registerr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
