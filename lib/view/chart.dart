@@ -19,7 +19,7 @@ class _ChartState extends State<Chart> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          'Kaffee',
+          'Kaffee Chart',
           textAlign: TextAlign.center,
           style: TextStyle(
               fontWeight: FontWeight.bold,

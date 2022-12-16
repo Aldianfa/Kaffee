@@ -153,7 +153,10 @@ class _DetailkopiState extends State<Detailkopi> {
                           ],
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                             Navigator.push(context, 
+                      MaterialPageRoute(builder: (context) => Chart()));
+                          },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.fromLTRB(35,10,35,10),
                             shape: RoundedRectangleBorder(

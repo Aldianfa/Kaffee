@@ -21,7 +21,7 @@ class _registerrState extends State<registerr> {
   void register(String email, password) async {
     try {
       // ME-POST atau MENAMBAH data json dari link 
-      var response = await Dio().post('http://192.168.98.91:3000/user',
+      var response = await Dio().post('http://172.20.10.6:3000/user',
           data: {"email": email, "password": password});
       if (response.statusCode == 201) {
         // status code 201 karena berhasil membuat data baru
@@ -43,6 +43,7 @@ class _registerrState extends State<registerr> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Container(

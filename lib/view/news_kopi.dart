@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 import 'add_kopi.dart';
@@ -79,7 +81,29 @@ class _NewsKopiState extends State<NewsKopi> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text('Kaffee News', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),),
+              SizedBox(height: 5,),
               Card(
+              semanticContainer: true,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Image.asset('assets/img/Layer.png',fit:BoxFit.fill,),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          elevation: 5,
+          margin: EdgeInsets.all(10),
+            ),
+            Card(
+              semanticContainer: true,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Image.asset('assets/img/Layer.png',fit:BoxFit.fill,),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          elevation: 5,
+          margin: EdgeInsets.all(10),
+            ),
+            Card(
               semanticContainer: true,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Image.asset('assets/img/Layer.png',fit:BoxFit.fill,),

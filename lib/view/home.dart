@@ -114,11 +114,7 @@ class _Home_pageState extends State<Home_page> {
                       hintStyle: TextStyle(color: Colors.grey, fontSize: 16)),
                 ),
               ),
-              // SizedBox(height: 5,),
-              // Text(
-              //   'Use Best Voucher',
-              //   style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 13, 155, 0)),
-              // ),
+              
               SizedBox(height: 10,),
 
               Card(
@@ -131,87 +127,188 @@ class _Home_pageState extends State<Home_page> {
           elevation: 5,
           margin: EdgeInsets.all(10),
             ),
-      
-              // GridView.builder(
-                
-              // ),
-              FutureBuilder<List<Kopi>>(
-                future: service.fetchKopi(),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState==ConnectionState.waiting){
-                    return Center(child: CircularProgressIndicator());
-      
-                  }else{
-                    if (snapshot.hasError){
-                      return Text(snapshot.error.toString());
-                    }else{
-                      return ListView.separated(
-                        
-                itemCount: snapshot.data!.length,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: (context) => Detailkopi(kopi: Kopi(id: int.parse("${snapshot.data?[index].id}"), name: "${snapshot.data?[index].name}", price: "${snapshot.data?[index].price}", description: "${snapshot.data?[index].description}", image: "${snapshot.data?[index].image}", rate: int.parse("${snapshot.data?[index].rate}"), des: "${snapshot.data?[index].des}"),)));
-                    },
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)
-                        
-                      ),
-                      child: Container(
-                       
-                        child: Center(
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 0, right: 10, left: 0),
+            SizedBox(height: 10,),
+            Text('Menu :',textAlign: TextAlign.start, style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 18
+            ),),
+            FutureBuilder<List<Kopi>>(
+              future: service.fetchKopi(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: Text('Please wait its loading...'));
+                } else {
+                  if (snapshot.hasError) {
+                    return Center(child: Text('Error: ${snapshot.error}'));
+                  } else {
+                    return Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: GridView.builder(
+                          
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: snapshot.data!.length,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 12,
+                            mainAxisSpacing: 12,
+                          ),
+                          itemBuilder: (context, i) {
+                            return GestureDetector(
+                              
+                              onTap: () {
+                                Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=> Detailkopi(kopi: Kopi(id: int.parse("${snapshot.data?[i].id}"), name: "${snapshot.data?[i].name}", price: "${snapshot.data?[i].price}", description: "${snapshot.data?[i].description}", image: "${snapshot.data?[i].image}", rate: int.parse("${snapshot.data?[i].rate}"), des: "${snapshot.data?[i].des}"),)));
+                              },
+                              
+                              child: Card(
+                                color: Color.fromARGB(255, 235, 236, 221),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  
+                                ),
                                 child: Container(
-                                  height: 120,
-                                  width: 100,
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(),
+                                          child: Container(
+                                          height: 120,
+                                          width: 170,
                                   // child: Image.asset(dataKopi[index].image,fit: BoxFit.contain,),
                                   decoration: BoxDecoration(
-                                    // borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomLeft: Radius.circular(20)),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
+                                    
+                                    // borderRadius: BorderRadius.circular(20),
                                     image: DecorationImage(
-                                      image: NetworkImage(snapshot.data![index].image),
-                                      fit: BoxFit.cover
+
+                                      image: NetworkImage(snapshot.data![i].image),
+                                      fit: BoxFit.cover, 
                                     )
                                   ),
                                 ),
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsets.only(bottom: 5,top: 5),
+                                  padding: const EdgeInsets.only(top: 2),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment : MainAxisAlignment.center,
                                     children: [
                                       
-                                      Text(snapshot.data![index].name, style: TextStyle(fontSize:18,fontWeight: FontWeight.bold)),
+                                      
+                                      Text(snapshot.data![i].name, style: TextStyle(fontSize:11,fontWeight: FontWeight.bold)),
       
                                       SizedBox(height: 2,),
-                                      Text(snapshot.data![index].des,style: TextStyle(fontSize: 11, color: Colors.grey),),
-                                      SizedBox(height: 30,),
-                                      Text(snapshot.data![index].price.toString(), style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromARGB(255, 48, 91, 60)),)
+                                      Text(snapshot.data![i].des, style: TextStyle(fontSize:9,fontWeight: FontWeight.bold, color: Colors.grey)),
+                                      
+                                
+                                      
                                     ],
                                   ),
                                 ),
                               )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                }, separatorBuilder: (BuildContext context, int index) { return SizedBox(height: 5,) ;},
-                
-              );
-                    }
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              
+                                
+                              
+                            );
+                            
+                          }),
+                    );
                   }
-                },
+                }
+              }
               )
+
+
+            // INI LISTVIEW
+            // SizedBox(height: 5,),
+      
+            //   // GridView.builder(
+                
+            //   // ),
+            //   FutureBuilder<List<Kopi>>(
+            //     future: service.fetchKopi(),
+            //     builder: (context, snapshot) {
+            //       if (snapshot.connectionState==ConnectionState.waiting){
+            //         return Center(child: CircularProgressIndicator());
+      
+            //       }else{
+            //         if (snapshot.hasError){
+            //           return Text(snapshot.error.toString());
+            //         }else{
+            //           return ListView.separated(
+                        
+            //     itemCount: snapshot.data!.length,
+            //     shrinkWrap: true,
+            //     physics: NeverScrollableScrollPhysics(),
+            //     itemBuilder: (context, index) {
+            //       return GestureDetector(
+            //         onTap: () {
+            //           Navigator.push(context, 
+            //           MaterialPageRoute(builder: (context) => Detailkopi(kopi: Kopi(id: int.parse("${snapshot.data?[index].id}"), name: "${snapshot.data?[index].name}", price: "${snapshot.data?[index].price}", description: "${snapshot.data?[index].description}", image: "${snapshot.data?[index].image}", rate: int.parse("${snapshot.data?[index].rate}"), des: "${snapshot.data?[index].des}"),)));
+            //         },
+            //         child: Card(
+            //           shape: RoundedRectangleBorder(
+            //             borderRadius: BorderRadius.circular(20)
+                        
+            //           ),
+            //           child: Container(
+                       
+            //             child: Center(
+            //               child: Row(
+            //                 children: [
+            //                   Padding(
+            //                     padding: const EdgeInsets.only(top: 0, right: 10, left: 0),
+            //                     child: Container(
+            //                       height: 120,
+            //                       width: 100,
+            //                       // child: Image.asset(dataKopi[index].image,fit: BoxFit.contain,),
+            //                       decoration: BoxDecoration(
+            //                         // borderRadius: BorderRadius.only(topLeft: Radius.circular(20),bottomLeft: Radius.circular(20)),
+            //                         borderRadius: BorderRadius.circular(20),
+            //                         image: DecorationImage(
+            //                           image: NetworkImage(snapshot.data![index].image),
+            //                           fit: BoxFit.cover
+            //                         )
+            //                       ),
+            //                     ),
+            //                   ),
+            //                   Expanded(
+            //                     child: Padding(
+            //                       padding: const EdgeInsets.only(bottom: 5,top: 5),
+            //                       child: Column(
+            //                         crossAxisAlignment: CrossAxisAlignment.start,
+            //                         children: [
+                                      
+            //                           Text(snapshot.data![index].name, style: TextStyle(fontSize:18,fontWeight: FontWeight.bold)),
+      
+            //                           SizedBox(height: 2,),
+            //                           Text(snapshot.data![index].des,style: TextStyle(fontSize: 11, color: Colors.grey),),
+            //                           SizedBox(height: 30,),
+            //                           Text(snapshot.data![index].price.toString(), style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromARGB(255, 48, 91, 60)),)
+            //                         ],
+            //                       ),
+            //                     ),
+            //                   )
+            //                 ],
+            //               ),
+            //             ),
+            //           ),
+            //         ),
+            //       );
+            //     }, separatorBuilder: (BuildContext context, int index) { return SizedBox(height: 5,) ;},
+                
+            //   );
+            //         }
+            //       }
+            //     },
+            //   )
               
             ],
           ),

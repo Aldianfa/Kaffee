@@ -19,7 +19,7 @@ class _loginnState extends State<loginn> {
   void login(String email, password) async {
     try {
       // ME-GET atau Mengambil data json dari link
-      var response = await Dio().get('http://192.168.98.91:3000/user');
+      var response = await Dio().get('http://172.20.10.6:3000/user');
       // inisialisasi panjang data
       var panjang_data = response.data.length;
       if (response.statusCode == 200) {
@@ -166,9 +166,11 @@ class _loginnState extends State<loginn> {
                     ),
                     child: TextField(
                       controller: controllerPass,
+                      obscureText: true,
                       style: TextStyle(
                         fontWeight: FontWeight.normal,
                         fontSize: 16
+                        
                       ),
                       decoration: InputDecoration(
                         hintText: "Your Password",
